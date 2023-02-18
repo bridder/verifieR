@@ -1,0 +1,13 @@
+test_that(desc = "required_typeof is not NA.",
+          code =
+            {
+              require(tidyverse)
+              require(magrittr)
+
+              expect_error(object = verify_class_and_typeof(tested_value = TRUE,
+                                                required_length = 1L,
+                                                tested_value_name =  "camelCase",
+                                                required_classes = "logical",
+                                                required_typeof = NULL),
+                                                regexp = "^required_typeof cannot be NULL\\.$")
+            })
