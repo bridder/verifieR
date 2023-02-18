@@ -146,14 +146,20 @@ verify_class_and_typeof <- function(tested_value,
   assertthat::assert_that(any(required_typeof %in% valid_typeof_values),msg = "required_typeof can only be one of the types described in the help for the typeof() function.")
 
   #tested_value assertions.
-
+  #We make the assumption that a NULL value is always an invalid input.
   assertthat::assert_that(!is.null(tested_value),msg = sprintf("%s cannot be NULL.",tested_value_name))
 
-  assertthat::assert_that(length(tested_value) == required_length,
-              msg = sprintf(fmt = "Argument '%s' must have length equal to the required_length; required_length = %dL; asserted length = %dL.",
+  assertthat::assert_that(length(tested_value) >= required_length_min,
+              msg = sprintf(fmt = "Argument '%s' must have length >= required_length_min; required_length_min = %dL; asserted length = %dL.",
                             tested_value_name,
-                            required_length,
+                            required_length_min,
                             length(tested_value)))
+
+  assertthat::assert_that(length(tested_value) <= required_length_max,
+                          msg = sprintf(fmt = "Argument '%s' must have length <= required_length_max; required_length_min = %dL; asserted length = %dL.",
+                                        tested_value_name,
+                                        required_length_max,
+                                        length(tested_value)))
 
   assertion_error_string <- paste0(class(tested_value),collapse = ", ")
   assertthat::assert_that(all(required_classes %in% class(tested_value)),
