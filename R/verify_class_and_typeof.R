@@ -3,8 +3,9 @@
 #' This function is a much more compact way of doing many common type-checking assertions for a
 #' a function argument.
 #'
-#' @param tested_value the value of what is being tested, e.g. the variable loaded in as a function argument.
-#' @param required_length Required length of the tested_value
+#' @param tested_value the value of what is being tested, e.g. the variable loaded in as a function argument. No restraint on type.
+#' @param required_length_min Required minimum length of the tested_value; integer; exact value obtained by setting required_length_min == required_length_max
+#' @param required_length_max Required maximum length of the tested_value; integer
 #' @param tested_value_name the name of the variable, input as a character, e.g. if the value tested was first_derivative, then it's tested_value_name would be "first_derivative".
 #' @param required_classes character vector of required classes for tested_value to possess.
 #' @param required_typeof character vector of required types for tested_value to possess.
