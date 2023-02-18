@@ -96,7 +96,7 @@ verify_class_and_typeof <- function(tested_value,
 
   #tested_value_name assertions.
   assertthat::assert_that(!is.null(tested_value_name),msg = "tested_value_name cannot be NULL.")
-  assertthat::assert_that(!is_empty(tested_value_name),msg = "tested_value_name cannot be empty")
+  assertthat::assert_that(!is_empty(tested_value_name),msg = "tested_value_name cannot be empty.")
   assertthat::assert_that(!is.na(tested_value_name),msg = "tested_value_name cannot be NA.")
 
   assertthat::assert_that(length(tested_value_name) == 1L,
