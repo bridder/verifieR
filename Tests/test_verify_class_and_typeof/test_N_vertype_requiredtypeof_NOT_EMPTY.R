@@ -10,5 +10,5 @@ test_that(desc = "required_typeof is not NA.",
                                                             tested_value_name =  "camelCase",
                                                             required_classes = "logical",
                                                             required_typeof = character()),
-                                                regexp = "^required_typeof cannot be empty\\.$")
+                           regexp = "^required_typeof cannot be empty\\.$")
             })

@@ -10,5 +10,5 @@ test_that(desc = "required_typeof is not length 2L or greater.",
                                                             tested_value_name =  "camelCase",
                                                             required_classes = "logical",
                                                             required_typeof = "ham_sandwich"),
-                                                regexp = "^required_typeof can only be one of the types described in the help for the typeof\\(\\) function\\.$")
+                           regexp = "^required_typeof can only be one of the types described in the help for the typeof\\(\\) function\\.$")
             })

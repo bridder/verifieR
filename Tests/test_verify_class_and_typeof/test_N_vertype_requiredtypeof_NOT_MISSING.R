@@ -10,5 +10,5 @@ test_that(desc = "required_typeof is not missing.",
                                                             tested_value_name =  "camelCase",
                                                             required_classes = "logical"),
                            #required_typeof = "logical",
-                                                regexp = "^required_typeof is missing\\.$")
+                           regexp = "^required_typeof is missing\\.$")
             })
