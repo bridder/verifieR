@@ -8,7 +8,7 @@ test_that(desc = "required_typeof is not NA.",
                                                             required_length_min = 1L,
                                                             required_length_max = 1L,
                                                             tested_value_name =  "camelCase",
-                                                required_classes = "logical",
-                                                required_typeof = NULL),
+                                                            required_classes = "logical",
+                                                            required_typeof = NULL),
                                                 regexp = "^required_typeof cannot be NULL\\.$")
             })

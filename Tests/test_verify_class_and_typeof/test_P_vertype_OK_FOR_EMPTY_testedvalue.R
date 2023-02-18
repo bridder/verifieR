@@ -8,8 +8,8 @@ test_that(desc = "Works for an empty logical x_input.",
                                                             required_length_min = 0L,
                                                             required_length_max = 0L,
                                                             tested_value_name =  "empty.variable.NAME_52",
-                                                required_classes = "logical",
-                                                required_typeof = "logical"),
+                                                            required_classes = "logical",
+                                                            required_typeof = "logical"),
                                                 expected = logical())
             })
 
@@ -23,7 +23,7 @@ test_that(desc = "Works for an empty list.",
                                                             required_length_min = 0L,
                                                             required_length_max = 0L,
                                                             tested_value_name =  "snake_case_empty_list",
-                                                required_classes = "list",
-                                                required_typeof = "list"),
+                                                            required_classes = "list",
+                                                            required_typeof = "list"),
                            expected = list())
             })
