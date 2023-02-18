@@ -11,7 +11,7 @@ test_that(desc = "x_input tibble, but no classes match the three tibble classes.
               expect_error(object = verify_class_and_typeof(tested_value = MOCK_tibble_length_3_rows_2,
                                                             required_length_min = 3L,
                                                             required_length_max = 3L,
-                                                tested_value_name =  "mt_L3_R2",
+                                                            tested_value_name =  "mt_L3_R2",
                                                 required_classes = "integer",
                                                 required_typeof = "list"),
                            regexp = error_regex1)
@@ -19,7 +19,7 @@ test_that(desc = "x_input tibble, but no classes match the three tibble classes.
               expect_error(object = verify_class_and_typeof(tested_value = MOCK_tibble_length_3_rows_2,
                                                             required_length_min = 3L,
                                                             required_length_max = 3L,
-                                                tested_value_name =  "mt_L3_R2",
+                                                            tested_value_name =  "mt_L3_R2",
                                                 required_classes = "ham_sandwich",
                                                 required_typeof = "list"),
                            regexp = error_regex2)
@@ -27,7 +27,7 @@ test_that(desc = "x_input tibble, but no classes match the three tibble classes.
               expect_error(object = verify_class_and_typeof(tested_value = MOCK_tibble_length_3_rows_2,
                                                             required_length_min = 3L,
                                                             required_length_max = 3L,
-                                                tested_value_name =  "mt_L3_R2",
+                                                            tested_value_name =  "mt_L3_R2",
                                                 required_classes = "character",
                                                 required_typeof = "list"),
                            regexp = error_regex3)
