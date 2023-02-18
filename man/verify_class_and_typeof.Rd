@@ -6,16 +6,19 @@
 \usage{
 verify_class_and_typeof(
   tested_value,
-  required_length,
+  required_length_min = 1,
+  required_length_max = 1,
   tested_value_name,
   required_classes,
   required_typeof
 )
 }
 \arguments{
-\item{tested_value}{the value of what is being tested, e.g. the variable loaded in as a function argument.}
+\item{tested_value}{the value of what is being tested, e.g. the variable loaded in as a function argument. No restraint on type.}
 
-\item{required_length}{Required length of the tested_value}
+\item{required_length_min}{Required minimum length of the tested_value; integer; exact value obtained by setting required_length_min == required_length_max}
+
+\item{required_length_max}{Required maximum length of the tested_value; integer}
 
 \item{tested_value_name}{the name of the variable, input as a character, e.g. if the value tested was first_derivative, then it's tested_value_name would be "first_derivative".}
 
