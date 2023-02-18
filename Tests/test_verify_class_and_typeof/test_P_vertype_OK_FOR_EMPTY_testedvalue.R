@@ -18,7 +18,7 @@ test_that(desc = "Works for an empty list.",
             {
               require(tidyverse)
               require(magrittr)
-              
+
               expect_equal(object = verify_class_and_typeof(tested_value = list(),
                                                             required_length_min = 0L,
                                                             required_length_max = 0L,
