@@ -20,7 +20,8 @@ verify_class_and_typeof <- function(tested_value,
 {
   #Check for missings right at the beginning.
   assertthat::assert_that(!missing(tested_value),msg = "tested_value is missing.")
-  assertthat::assert_that(!missing(required_length),msg = "required_length is missing.")
+  assertthat::assert_that(!missing(required_length_min),msg = "required_length_min is missing.")
+  assertthat::assert_that(!missing(required_length_max),msg = "required_length_max is missing.")
   assertthat::assert_that(!missing(tested_value_name),msg = "tested_value_name is missing.")
   assertthat::assert_that(!missing(required_classes),msg = "required_classes is missing.")
   assertthat::assert_that(!missing(required_typeof),msg = "required_typeof is missing.")
@@ -51,19 +52,47 @@ verify_class_and_typeof <- function(tested_value,
                            "bytecode",
                            "weakref")
 
-  #required_length assertions.
-  assertthat::assert_that(!is.null(required_length),msg = "required_length cannot be NULL.")
-  assertthat::assert_that(!is_empty(required_length),msg = "required_length cannot be empty.")
-  assertthat::assert_that(!is.na(required_length),msg = "required_length cannot be NA.")
+  #required_length_min and max assertions.
+  assertthat::assert_that(!is.null(required_length_min),msg = "required_length_min cannot be NULL.")
+  assertthat::assert_that(!is.null(required_length_max),msg = "required_length_max cannot be NULL.")
 
-  assertthat::assert_that(length(required_length) == 1L,
-              msg = sprintf(fmt = "required_length must be of length 1L; asserted length = %dL.",
-                            length(required_length)))
+  assertthat::assert_that(!is_empty(required_length_min),msg = "required_length_min cannot be empty.")
+  assertthat::assert_that(!is_empty(required_length_max),msg = "required_length_max cannot be empty.")
+
+  assertthat::assert_that(!is.na(required_length_min),msg = "required_length_min cannot be NA.")
+  assertthat::assert_that(!is.na(required_length_max),msg = "required_length_max cannot be NA.")
 
 
-  assertthat::assert_that(is.integer(required_length),
-              msg = sprintf(fmt = "required_length must be of type 'integer', asserted type is '%s'.",
-                            typeof(required_length)))
+  assertthat::assert_that(length(required_length_min) == 1L,
+              msg = sprintf(fmt = "required_length_min must be of length 1L; asserted length = %dL.",
+                            length(required_length_min)))
+
+  assertthat::assert_that(length(required_length_max) == 1L,
+                          msg = sprintf(fmt = "required_length_max must be of length 1L; asserted length = %dL.",
+                                        length(required_length_max)))
+
+  assertthat::assert_that(is.integer(required_length_min),
+              msg = sprintf(fmt = "required_length_min must be of type 'integer', asserted type is '%s'.",
+                            typeof(required_length_min)))
+
+  assertthat::assert_that(is.integer(required_length_max),
+                          msg = sprintf(fmt = "required_length_max must be of type 'integer', asserted type is '%s'.",
+                                        typeof(required_length_max)))
+
+  assertthat::assert_that(required_length_max >= required_length_min,
+                          msg = sprintf(fmt = "required_length_max must be >= required_length_min; asserted difference: %dL - %dL = %dL.",
+                                        required_length_max,
+                                        required_length_min,
+                                        required_length_max - required_length_min))
+
+  assertthat::assert_that(required_length_min >= 0L,
+                          msg = sprintf(fmt = "required_length_min must be >= 0.",
+                                        required_length_min))
+
+  assertthat::assert_that(required_length_max >= 0L,
+                          msg = sprintf(fmt = "required_length_max must be >= 0.",
+                                        required_length_max))
+
 
   #tested_value_name assertions.
   assertthat::assert_that(!is.null(tested_value_name),msg = "tested_value_name cannot be NULL.")
