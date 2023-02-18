@@ -11,7 +11,8 @@
 #' @return The return value is the identity of tested_value if all assertions pass; otherwise, an assertion error in assert_that will trigger.
 #' @export
 verify_class_and_typeof <- function(tested_value,
-                                    required_length,
+                                    required_length_min = 1,
+                                    required_length_max = 1,
                                     tested_value_name,
                                     required_classes,
                                     required_typeof)

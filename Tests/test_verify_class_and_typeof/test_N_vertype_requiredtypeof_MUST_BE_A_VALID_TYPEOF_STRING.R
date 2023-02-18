@@ -5,7 +5,8 @@ test_that(desc = "required_typeof is not length 2L or greater.",
               require(magrittr)
 
               expect_error(object = verify_class_and_typeof(tested_value = TRUE,
-                                                required_length = 1L,
+                                                            required_length_min = 1L,
+                                                            required_length_max = 1L,
                                                 tested_value_name =  "camelCase",
                                                 required_classes = "logical",
                                                 required_typeof = "ham_sandwich"),
