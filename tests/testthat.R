@@ -9,5 +9,5 @@
 library(testthat)
 library(verifieR)
 setwd("tests/")
-test_check("verifieR",reporter = SummaryReporter)
+test_check("verifieR",reporter = ProgressReporter)
 setwd("../")
