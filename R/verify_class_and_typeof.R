@@ -156,7 +156,7 @@ verify_class_and_typeof <- function(tested_value,
                             length(tested_value)))
 
   assertthat::assert_that(length(tested_value) <= required_length_max,
-                          msg = sprintf(fmt = "Argument '%s' must have length <= required_length_max; required_length_min = %dL; asserted length = %dL.",
+                          msg = sprintf(fmt = "Argument '%s' must have length <= required_length_max; required_length_max = %dL; asserted length = %dL.",
                                         tested_value_name,
                                         required_length_max,
                                         length(tested_value)))
