@@ -10,7 +10,7 @@ test_that(desc = "Works for an empty logical x_input.",
                                                             tested_value_name =  "empty.variable.NAME_52",
                                                             required_classes = "logical",
                                                             required_typeof = "logical"),
-                                                expected = logical())
+                           expected = logical())
             })
 
 test_that(desc = "Works for an empty list.",

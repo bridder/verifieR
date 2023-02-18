@@ -25,5 +25,5 @@ test_that(desc = "Small realistic positive test cases.",
                                                             tested_value_name =  "doubleNumeric",
                                                             required_classes = "numeric",
                                                             required_typeof = "double"),
-                                                    expected = c(25.2,-110.1,0.0,1013.9))
-                                                  })
+                           expected = c(25.2,-110.1,0.0,1013.9))
+            })
