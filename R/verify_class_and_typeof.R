@@ -56,8 +56,8 @@ verify_class_and_typeof <- function(tested_value,
   assertthat::assert_that(!is.null(required_length_min),msg = "required_length_min cannot be NULL.")
   assertthat::assert_that(!is.null(required_length_max),msg = "required_length_max cannot be NULL.")
 
-  assertthat::assert_that(!is_empty(required_length_min),msg = "required_length_min cannot be empty.")
-  assertthat::assert_that(!is_empty(required_length_max),msg = "required_length_max cannot be empty.")
+  assertthat::assert_that(!purrr::is_empty(required_length_min),msg = "required_length_min cannot be empty.")
+  assertthat::assert_that(!purrr::is_empty(required_length_max),msg = "required_length_max cannot be empty.")
 
   assertthat::assert_that(!is.na(required_length_min),msg = "required_length_min cannot be NA.")
   assertthat::assert_that(!is.na(required_length_max),msg = "required_length_max cannot be NA.")
@@ -96,7 +96,7 @@ verify_class_and_typeof <- function(tested_value,
 
   #tested_value_name assertions.
   assertthat::assert_that(!is.null(tested_value_name),msg = "tested_value_name cannot be NULL.")
-  assertthat::assert_that(!is_empty(tested_value_name),msg = "tested_value_name cannot be empty.")
+  assertthat::assert_that(!purrr::is_empty(tested_value_name),msg = "tested_value_name cannot be empty.")
   assertthat::assert_that(!is.na(tested_value_name),msg = "tested_value_name cannot be NA.")
 
   assertthat::assert_that(length(tested_value_name) == 1L,
@@ -113,7 +113,7 @@ verify_class_and_typeof <- function(tested_value,
 
   #required_classes assertions.
   assertthat::assert_that(!is.null(required_classes),msg = "required_classes cannot be NULL.")
-  assertthat::assert_that(!is_empty(required_classes),msg = "required_classes cannot be empty.")
+  assertthat::assert_that(!purrr::is_empty(required_classes),msg = "required_classes cannot be empty.")
   assertthat::assert_that(all(!is.na(required_classes)),msg = "required_classes cannot have any NA values.")
 
   assertthat::assert_that(is.character(required_classes),
@@ -125,7 +125,7 @@ verify_class_and_typeof <- function(tested_value,
 
   #required_typeof assertions
   assertthat::assert_that(!is.null(required_typeof),msg = "required_typeof cannot be NULL.")
-  assertthat::assert_that(!is_empty(required_typeof),msg = "required_typeof cannot be empty.")
+  assertthat::assert_that(!purrr::is_empty(required_typeof),msg = "required_typeof cannot be empty.")
 
   assertthat::assert_that(length(required_typeof) == 1L,
               msg = sprintf(fmt = "required_typeof must be of length 1L; asserted length is %dL.",
