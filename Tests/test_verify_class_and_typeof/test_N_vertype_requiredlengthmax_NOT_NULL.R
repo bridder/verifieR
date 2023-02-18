@@ -5,9 +5,10 @@ test_that(desc = "required_length is not NULL.",
               require(magrittr)
 
               expect_error(object = verify_class_and_typeof(tested_value = TRUE,
-                                                required_length = NULL,
+                                                required_length_min = 1L,
+                                                required_length_max = NULL,
                                                 tested_value_name =  "camelCase",
                                                 required_classes = "logical",
                                                 required_typeof = "logical"),
-                                                regexp = "^required_length cannot be NULL\\.$")
+                                                regexp = "^required_length_max cannot be NULL\\.$")
             })

@@ -1,12 +1,14 @@
-test_that(desc = "required_length is not missing.",
+test_that(desc = "required_length is not NA.",
           code =
             {
               require(tidyverse)
               require(magrittr)
 
               expect_error(object = verify_class_and_typeof(tested_value = TRUE,
-                                                #required_length = integer(),
+                required_length_min = 1L,
+                required_length_max = NA,
                                                 tested_value_name =  "camelCase",
                                                 required_classes = "logical",
-                                                regexp = "^required_length is missing\\.$"))
+                                                required_typeof = "logical",
+                                                regexp = "^required_length_max cannot be NA\\.$"))
             })
