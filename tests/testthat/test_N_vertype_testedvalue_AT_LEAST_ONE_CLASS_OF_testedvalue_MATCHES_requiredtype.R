@@ -1,7 +1,7 @@
 test_that(desc = "x_input tibble, but no classes match the three tibble classes.",
           code =
             {
-              MOCK_tibble_length_3_rows_2 <- tibble(x=c(1,2),y=c("omg","bbq"),z=c(99,100))
+              MOCK_tibble_length_3_rows_2 <- tibble::tibble(x=c(1,2),y=c("omg","bbq"),z=c(99,100))
               error_regex1 <- "^required_classes must all have a match in what is returned by class\\('mt_L3_R2'\\); required_classes: 'integer'; asserted classes: tbl_df, tbl, data\\.frame\\.$"
               error_regex2 <- "^required_classes must all have a match in what is returned by class\\('mt_L3_R2'\\); required_classes: 'ham_sandwich'; asserted classes: tbl_df, tbl, data\\.frame\\.$"
               error_regex3 <- "^required_classes must all have a match in what is returned by class\\('mt_L3_R2'\\); required_classes: 'character'; asserted classes: tbl_df, tbl, data\\.frame\\.$"

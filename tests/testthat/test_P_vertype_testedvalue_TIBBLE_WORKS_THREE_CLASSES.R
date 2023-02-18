@@ -1,8 +1,8 @@
 test_that(desc = "Works for tibble on all 3 classes, regardless of shuffling the required_classes vector.",
           code =
             {
-              MOCK_tibble_length_3_rows_2 <- tibble(x=c(1,2),y=c("omg","bbq"),z=c(99,100))
-              EXPECTED_output <- tibble(x=c(1,2),y=c("omg","bbq"),z=c(99,100))
+              MOCK_tibble_length_3_rows_2 <- tibble::tibble(x=c(1,2),y=c("omg","bbq"),z=c(99,100))
+              EXPECTED_output <- tibble::tibble(x=c(1,2),y=c("omg","bbq"),z=c(99,100))
 
               expect_equal(object = verify_class_and_typeof(tested_value = MOCK_tibble_length_3_rows_2,
                                                             required_length_min = 3L,
