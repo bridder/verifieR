@@ -13,3 +13,6 @@ RoxygenNote: 7.2.3
 Imports:
 	assertthat (>= 0.2.1),
 	magrittr (>= 2.0.3)
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
